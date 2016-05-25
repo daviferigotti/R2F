@@ -1,3 +1,6 @@
 ## Projeto R2F
 
-#Sistema de placar de cargas.
+Grandes empresas transportam seu produtos usando transportadoras locais. Geralmente mais de uma transportadora. Essas transportadoras precisam dividir igualmente as cargas e entregas solicitadas pela indústria  
+
+#Sistema de placar de cargas
+
