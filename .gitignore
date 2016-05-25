@@ -1,1 +1,5 @@
 /nbproject/private/
+/.settings/
+/.project
+/.buildpath
+/composer.phar

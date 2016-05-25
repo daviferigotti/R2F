@@ -1,3 +1,3 @@
-# Projeto R2F
+## Projeto R2F
 
-##Sistema de placar de cargas.
+#Sistema de placar de cargas.
