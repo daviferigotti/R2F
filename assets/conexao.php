@@ -1,4 +1,9 @@
 <?php
+/**
+ * Este Script faz a autenticação de usuário. 
+ * Hoje apenas será logado ao sistema o usuário diego@diego.com com a senha 123.
+ * Ainda não há banco de dados criado para que a autenticação funcione com outros usuários. 
+ */
 //$user = isset($_POST['user']);
 //$pw = isset($_POST['pw']);
 $user = (isset($_POST["user"]) ? $_POST["user"] : null);
