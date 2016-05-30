@@ -1,16 +1,31 @@
 <?php
 /**
- * Este Script faz a autenticação de usuário. 
- * Hoje apenas será logado ao sistema o usuário diego@diego.com com a senha 123.
- * Ainda não há banco de dados criado para que a autenticação funcione com outros usuários. 
+ * Este Script faz a autenticaï¿½ï¿½o de usuï¿½rio. 
+ * Hoje apenas serï¿½ logado ao sistema o usuï¿½rio diego@diego.com com a senha 123.
+ * Ainda nï¿½o hï¿½ banco de dados criado para que a autenticaï¿½ï¿½o funcione com outros usuï¿½rios. 
  */
 //$user = isset($_POST['user']);
 //$pw = isset($_POST['pw']);
 $user = (isset($_POST["user"]) ? $_POST["user"] : null);
 $pw = (isset($_POST["pw"]) ? $_POST["pw"] : null);
 
-$_SERVER['PHP_AUTH_USER'] = $user;
-$_SERVER['PHP_AUTH_PW'] = $pw;
+echo '<pre>';
+var_dump($user);
+echo "aquieee: $user";
+die;
+
+$conn = mysqli_connect("localhost", "root", "", "r2f");
+
+$query = "SELECT `id`, `usuario` FROM `cadusu` WHERE `usuario` = '$user' and `senha` = '$pw'";
+
+$resultado = mysqli_query($conn, $query);
+
+$row = mysqli_fetch_array($resultado);
+echo $row['usuario'];
+
+
+$_SERVER['PHP_AUTH_USER'] = $row['usuario'];
+$_SERVER['PHP_AUTH_PW'] = $row['senha'];
 
 //sleep(2);
 if((isset($_SERVER['PHP_AUTH_USER']) && $_SERVER['PHP_AUTH_USER'] == "diego@diego.com") && (isset($_SERVER['PHP_AUTH_PW']) && $_SERVER['PHP_AUTH_PW'] == "123")){

@@ -8,7 +8,7 @@
    	<!-- Bootstrap -->
     <link href="lib/css/bootstrap.min.css" rel="stylesheet">
     
-    <title>Entrar em R2F</title>
+    <title>R2F</title>
     <style>
         #logo{
             position: relative;
@@ -45,7 +45,7 @@
            <img src="img/truck-303460_640.png" id="logo" class="hidden-xs" alt="truck"> 
         </div>
         
-        <form id="loginForm" class="form-signin" role="form">
+        <form id="loginForm" class="form-signin" role="form" action="assets/conexao.php">
 
             <h2 class="form-signin-heading">Entrar</h2>
             <label for="inputEmail" class="sr-only">Email Adress</label>
@@ -54,8 +54,9 @@
             <input name="pw" type="password" id="inputPassword" class="form-control" placeholder="Senha" required>
             <div>
                 <a href="#">Esqueci minha senha</a>
-            </div>
-            <button class="btn btn-lg btn-primary btn-block" type="submit" id="entrar">Entrar</button>
+<!--            </div>
+            <button class="btn btn-lg btn-primary btn-block" type="submit" id="entrar">Entrar</button>-->
+            <input type="submit">
         </form>
     </div>
      <div class="form-signin" id="pagina"> 
@@ -67,7 +68,7 @@
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     
-    <script src="lib/js/conexao.js"></script>
+<!--    <script src="lib/js/conexao.js"></script>-->
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="lib/js/bootstrap.min.js"></script>
     
