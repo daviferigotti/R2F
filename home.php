@@ -11,8 +11,8 @@ and open the template in the editor.
     </head>
     <body>
         <?php
-        // put your code here
+            echo 'Funcionou, Saporra!'
+            
         ?>
-        <h1>Oiiiilalialsi</h1>
     </body>
 </html>

@@ -1,21 +1,17 @@
 <?php
 /**
- * Este Script faz a autentica��o de usu�rio. 
+ * Este Script faz a autenticacao de usuario. 
  */
-$user = $_POST["user"];
+include_once './model/usuario.php';
+include_once './dao/usuario_dao.php';
+
+$user = (isset($_POST["user"]) ? $_POST["user"] : null);
 $pw = (isset($_POST["pw"]) ? $_POST["pw"] : null);
 
-$conn = mysqli_connect("localhost", "root", "", "r2f");
+$usu_dao = new Usuario_dao();
+$usu = $usu_dao->buscar($user, $pw);
 
-$query = "SELECT `id`, `usuario` FROM `cadusu` WHERE `usuario` = '$user' and `senha` = '$pw'";
-
-$resultado = mysqli_query($conn, $query);
-
-$row = mysqli_fetch_array($resultado);
-
-$_SERVER['PHP_AUTH_USER'] = $row['usuario'];
-$_SERVER['PHP_AUTH_PW'] = $pw;
-if(in_array($user, $row)){
+if(!is_null($usu['USUARIO'])){
 //if((isset($_SERVER['PHP_AUTH_USER']) && $_SERVER['PHP_AUTH_USER'] == $user) && (isset($_SERVER['PHP_AUTH_PW']) && $_SERVER['PHP_AUTH_PW'] == $pw)){
     session_start();
     $_SESSION['user'] = $user;
