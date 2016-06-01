@@ -11,8 +11,7 @@ and open the template in the editor.
     </head>
     <body>
         <?php
-            echo 'Funcionou, Saporra!'
-            
+            echo 'Funcionou!'
         ?>
     </body>
 </html>
