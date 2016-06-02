@@ -1,3 +1,11 @@
+<?php
+
+session_start();
+
+if (!isset($_SESSION['user'])) {
+    header('Location: index.html');
+}
+?>
 <!DOCTYPE html>
 <!--
 To change this license header, choose License Headers in Project Properties.
@@ -12,8 +20,7 @@ and open the template in the editor.
     </head>
     <body>
         <?php
-            echo 'Funcionou, Saporra!'
-            
+            echo 'Funcionou!'
         ?>
 <!--        <div id="placar">TODO write content</div>-->
     </body>

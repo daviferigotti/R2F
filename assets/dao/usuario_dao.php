@@ -1,9 +1,7 @@
 <?php
 
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/*
+ * Classe que faz as verificações no banco de dados
  */
 require_once $_SERVER['DOCUMENT_ROOT']."/R2F/assets/controller/conexao_banco.php";
 
@@ -11,33 +9,39 @@ require_once $_SERVER['DOCUMENT_ROOT']."/R2F/assets/controller/conexao_banco.php
 class Usuario_dao{
     public $binVar = null;
     
-    function insert($user){
+    public function Usuario_dao(){
         $this->binVar = ConexaoBanco::getConn();
-        
+    }
+            
+    function insert($user){
         $query_insert = "INSERT INTO CADUSU ('USUARIO','SENHA') VALUES ('$user->getUsuario()','$user->getSenha()')";
-        //$query = "SELECT ID, USUARIO FROM CADUSU WHERE USUARIO = '$user' AND SENHA = '$senha'";
         
-//        $conn = ConexaoBanco::getConn();
-
         $result = mysqli_query($conn, $query_insert);
         $retorno = mysqli_fetch_array($result);
         
     }
-    
-    function buscar($user, $senha){
-//        $cccc = new ConexaoBanco();
-//        $this->binVar = $cccc->getConn();
-        $this->binVar = ConexaoBanco::getConn();
-        
-        //$query_insert = "INSERT INTO CADUSU ('USUARIO','SENHA') VALUES ('$user->getUsuario()','$user->getSenha()')";
+    /**
+     * Busca usuário e senha no banco de dados para autenticação no sistema.
+     * Será instanciado um objeto Usuario sempre que o usuário e senha for encontrado no banco.
+     * Caso o usuário não seja encontrado, o retorno será um objeto nulo do tipo Usuario.
+     * 
+     * @param String $user Usuário do sistema
+     * @param String $senha Senha do usuário
+     * @return Object Usuario
+     */
+    function consultarUsuario($user, $senha){
+        $usuario = new Usuario();
         $query = "SELECT ID, USUARIO FROM CADUSU WHERE USUARIO = '$user' AND SENHA = '$senha'";
         
-//        $conn = ConexaoBanco::getConn();
-
         $result = mysqli_query($this->binVar, $query);
         $retorno = mysqli_fetch_array($result);
+        if (isset($retorno['USUARIO'])){
+            $usuario = new Usuario($user, $senha, $retorno['ID']);
+            return $usuario;
+        }else{
+            return $usuario;
+        }
         
-        return $retorno;
     }
 }
 
