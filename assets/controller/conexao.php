@@ -13,7 +13,7 @@ $objUsu = $usu_dao->consultarUsuario($htmlUser, $htmlPw);
 
 if($objUsu->getUsuario() != null && $objUsu->getId() != null){
     session_start();
-    $_SESSION['user'] = $htmlUser;
+    $_SESSION['user'] = $objUsu;
     echo json_encode(array("conn"=>true,"url"=>'http://'.$_SERVER['SERVER_NAME'].':'.$_SERVER['SERVER_PORT'].'/R2F/home.php'));
 }else {
     header('HTTP/1.1 401');

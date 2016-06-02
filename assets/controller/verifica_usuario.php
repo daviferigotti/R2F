@@ -5,10 +5,17 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
+spl_autoload_register(function(){
+    echo 'Ola';
+    
+});
 
 session_start();
-
-if (!isset($_SESSION['user'])) {
-    header('Location: index.html');
+echo session_id();
+var_dump($_SESSION);
+if (is_object($_SESSION['user'])) {
+    //header('Location: index.html');
 }
+
+//session_destroy();
+//var_dump($_SESSION);
