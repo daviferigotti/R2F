@@ -1,10 +1,5 @@
 <?php
-
-session_start();
-
-if (!isset($_SESSION['user'])) {
-    header('Location: index.html');
-}
+    require_once './assets/controller/verifica_usuario.php'
 ?>
 <!DOCTYPE html>
 <!--
@@ -14,7 +9,7 @@ and open the template in the editor.
 -->
 <html>
     <head>
-        <title>TODO supply a title</title>
+        <title>R2F - Home</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
@@ -22,6 +17,7 @@ and open the template in the editor.
         <?php
             echo 'Funcionou!'
         ?>
-<!--        <div id="placar">TODO write content</div>-->
+        
+        <input type="button" value="Click">
     </body>
 </html>
