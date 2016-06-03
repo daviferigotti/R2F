@@ -8,7 +8,7 @@ $(document).ready(function (){
        
        $.ajax({
             type: 'POST',
-            url: "assets/controller/conexao.php",
+            url: "mvc/controller/conexao.php",
             dataType: 'json',
             //dataType: 'html',
             data: $("#loginForm").serialize(),

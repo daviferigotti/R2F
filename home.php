@@ -1,6 +1,6 @@
 <?php
-    require_once './assets/controller/verifica_usuario.php';
-    require_once './assets/controller/conexao.php';
+    require_once './mvc/controller/verifica_usuario.php';
+    require_once './mvc/controller/conexao.php';
     
 //<!DOCTYPE html>
 //<!--<html>
@@ -11,9 +11,9 @@
 //    </head>
 //    <body>
     //$usu_dao->getId();
-    $objUsu = $_SESSION['user'];
-    
-    $objUsu->getUsuario();
+//    $objUsu = $_SESSION['user'];
+//    
+//    $objUsu->getUsuario();
     
     
 //        

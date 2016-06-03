@@ -1,5 +1,5 @@
 <?php
-require_once $_SERVER['DOCUMENT_ROOT']."/R2F/assets/controller/conexao_banco.php";
+require_once $_SERVER['DOCUMENT_ROOT']."/R2F/mvc/model/conexao_banco.php";
 
 /**
  * Classe que faz as verificações de usuário no banco de dados.
@@ -10,7 +10,7 @@ class Usuario_dao{
     public function Usuario_dao(){
         $this->binVar = ConexaoBanco::getConn();
     }
-            
+    
     function insert($user){
         $query_insert = "INSERT INTO CADUSU ('USUARIO','SENHA') VALUES ('$user->getUsuario()','$user->getSenha()')";
         
