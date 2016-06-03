@@ -2,8 +2,8 @@
 /**
  * Este Script faz a autenticacao de usuario. 
  */
-include_once '../model/usuario.php';
-include_once '../dao/usuario_dao.php';
+include_once $_SERVER['DOCUMENT_ROOT'].'/R2F/assets/model/usuario.php';
+include_once $_SERVER['DOCUMENT_ROOT'].'/R2F/assets/dao/usuario_dao.php';
 
 $htmlUser = (isset($_POST["user"]) ? $_POST["user"] : null);
 $htmlPw = (isset($_POST["pw"]) ? $_POST["pw"] : null);

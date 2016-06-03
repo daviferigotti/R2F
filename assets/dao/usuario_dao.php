@@ -1,11 +1,9 @@
 <?php
-
-/*
- * Classe que faz as verificações no banco de dados
- */
 require_once $_SERVER['DOCUMENT_ROOT']."/R2F/assets/controller/conexao_banco.php";
 
-
+/**
+ * Classe que faz as verificações de usuário no banco de dados.
+ */
 class Usuario_dao{
     public $binVar = null;
     
@@ -27,7 +25,7 @@ class Usuario_dao{
      * 
      * @param String $user Usuário do sistema
      * @param String $senha Senha do usuário
-     * @return Object Usuario
+     * @return Usuario Usuário do sistema
      */
     function consultarUsuario($user, $senha){
         $usuario = new Usuario();

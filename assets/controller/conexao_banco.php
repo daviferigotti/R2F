@@ -3,7 +3,6 @@
  * Usando padrão de projeto Design Patterns (PHP Singleton)
  * Classe para a conexão com o banco de dados MySql.
  */ 
-
 class ConexaoBanco{
     private static $host = "127.0.0.1";
     private static $user = "root";
@@ -17,7 +16,10 @@ class ConexaoBanco{
     private function ConexaoBanco(){
         
     }
-    
+    /**
+     * 
+     * @return type
+     */
     public static function getConn(){
         if(!isset(self::$conn))
             self::$conn = new mysqli(self::$host, self::$user, self::$pw, self::$dbname);
